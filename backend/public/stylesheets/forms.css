@@ -1,0 +1,96 @@
+.mdc-form {
+    margin: 1rem
+}
+
+.mdc-file-input {
+    visibility: hidden;
+    padding: 1rem 1rem 0 0;
+}
+
+.mdc-file-input-label {
+    position: absolute;
+    margin: 1rem 0 1rem 2rem;
+}
+
+.review-form-dialog {
+    --mdc-dialog-min-width: 10rem;
+    --mdc-dialog-min-height: 10rem;
+
+}
+
+.form-errors {
+    padding-top: 1rem;
+    color: var(--mdc-theme-error, #b00020);
+}
+
+.mdc-file-input-label--invalid {
+    color: var(--mdc-theme-error, #b00020);
+}
+
+.mdc-file-input-error-label {
+    margin-left: 1rem;
+    font-size: 0.75rem;
+}
+
+.editable-field {
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
+}
+
+.edit-grid-item {
+    padding: 0.5rem;
+}
+
+.edit-grid {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.form-header {
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+}
+
+.mdc-list-item {
+    grid-template-columns: 0.1fr 0.8fr 0.1fr;
+}
+.mdc-list-item__text {
+    display: grid;
+}
+
+.form-header--button {
+    margin: 0.5rem 0 auto auto;
+
+}
+.form-header--title {
+    width: 100%;   
+}
+
+
+.event-wizard-buttons-container {
+    display: grid;
+    margin: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .edit-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .edit-form-resources-field-submit-button {
+        grid-column: 1 / span 2;
+    }
+
+    .event-wizard-buttons-container {
+        display: inline;
+        margin: 0.5rem;
+    }
+
+    .event-wizard-buttons-container button {
+        margin: 0.5rem;
+    }
+    
+    
+}

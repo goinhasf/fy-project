@@ -1,0 +1,107 @@
+version: "3.9"
+services:
+  mongo:
+    image: project-mongo:latest
+    mem_limit: 2GB
+    build: ../db
+    restart: always
+    ports:
+      - 27017:27017
+    networks: 
+      db:
+        aliases:
+          - db.society-management
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - db
+
+  file-upload-service:
+    image: file-upload-service:0.1
+    build: ../file-upload-service/target/docker/stage
+    env_file:
+      - ../.env
+      - ../file-upload-service/.env
+    ports:
+      - 9001:9000
+    depends_on:
+      - mongo
+    networks:
+      api:
+        aliases:
+          - api.file-upload-service
+      db:
+  
+  doc-analyser:
+    image: doc-analyser:0.1
+    build: ../doc-analyser
+    env_file: 
+      - ../doc-analyser/.env
+    ports:
+      - 9004:3000
+    networks: 
+      api:
+        aliases:
+          - api.doc-analyser
+      db:
+      
+  society-management:
+    image: society-management:0.1
+    mem_limit: 2GB
+    build: ./target/docker/stage
+    env_file:
+      - ../.env
+      - .env
+    ports:
+      - 9000:9000
+    depends_on: 
+      - mongo
+      - file-upload-service
+      - authorization-service
+    networks: 
+      api:
+        aliases:
+          - api.society-management
+      db:
+
+  authorization-service:
+    image: authorization-service:0.1
+    mem_limit: 3GB
+    restart: always
+    build: ../authorization-service/target/docker/stage
+    env_file:
+      - ../.env
+      - ../authorization-service/.env
+    ports:
+      - 9002:9000
+    depends_on:
+      - mongo
+    networks:
+      api:
+        aliases:
+          - api.authorization-service
+      db:
+  
+  api-gateway:
+    image: api-gateway:0.1
+    build: ../nginx
+    ports: 
+      - 8080:80
+    networks:
+      api:
+        aliases:
+         - api.society-management
+      db: 
+    depends_on: 
+      - mongo
+      - file-upload-service
+      - authorization-service
+      - society-management
+  
+networks:
+  api: {}
+  db: {}

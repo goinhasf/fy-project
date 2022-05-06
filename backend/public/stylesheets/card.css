@@ -1,0 +1,53 @@
+
+.mdc-card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.mdc-card-wrapper__text-section {
+    padding: 1rem
+}
+
+.mdc-card__title {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    font-weight: 500;
+    letter-spacing: .0125em;
+    text-decoration: inherit;
+    text-transform: inherit;
+}
+
+.mdc-card__subtitle {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: .0178571429em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    opacity: .6;
+}
+
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+     
+    .mdc-card {
+        margin-left: 20%;
+        display: flex;
+        margin-right:20%;
+    }
+
+    .mdc-touch-target-wrapper {
+        position: fixed;
+        right: 10rem;
+        bottom: 5rem;
+    }
+
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ /* @media only screen and (min-width: 992px) {
+
+ } */

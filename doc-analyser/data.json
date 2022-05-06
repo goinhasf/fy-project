@@ -1,0 +1,12 @@
+{
+    "event_name": "Graduating Party",
+    "date_on_sale": "12/04/2021",
+    "time_on_sale": "12:00pm",
+    "date_off_sale": "25/04/2021",
+    "time_off_sale": "12:00pm",
+    "products": [{ "name": "abc", "price": "4" }],
+    "sales_limit": 10,
+    "per_person_limit": 2,
+    "price": 25,
+    "customizations": "none"
+}

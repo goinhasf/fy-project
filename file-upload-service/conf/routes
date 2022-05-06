@@ -1,0 +1,6 @@
++ nocsrf
+-> /                controllers.FileUploadController
++ nocsrf
+-> /docs            controllers.DocumentationServer
+
+GET /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)

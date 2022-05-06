@@ -1,0 +1,12 @@
+**/.bsp/
+**/.idea/
+**/.metals/
+**/.vscode/
+**/target/
+**/.bloop/
+project/project/
+metals.sbt
+logs/
+*.mongo
+*keys.conf
+**/*/node_modules/

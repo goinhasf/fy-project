@@ -1,0 +1,10 @@
+.mdc-text-field__input--with-leading-icon {
+    padding-left: 32px;
+    padding-right: 16px;
+}
+.mdc-text-field__icon {
+    position: relative;
+    left: 16px;
+    right: initial;
+}
+
